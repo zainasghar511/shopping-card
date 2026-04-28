@@ -1,53 +1,151 @@
-#main div {
-    background: white;
-    border: 1px solid #dbdbdb;
-    border-radius: 8px;
-    margin: 20px auto;
-    padding: 15px;
-    max-width: 450px; /* Instagram post ki width */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+/* Google Font for Modern Look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
 }
 
-
-h3 {
-    font-family: sans-serif;
-    font-size: 14px;
-    margin-bottom: 10px;
-    font-weight: 600;
+/* Header & Inputs Section */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
 }
 
-
-.post-actions {
+.input-container {
     display: flex;
-    gap: 15px;
-    margin-top: 10px;
-    border-top: 1px solid #efefef;
-    padding-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-button {
-    background: none;
+input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+#addbutton {
+    background-color: #27ae60;
+    color: white;
     border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#addbutton:hover {
+    background-color: #219150;
+}
+
+/* Grid Layout for Cards */
+#maindiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 10px;
+}
+
+/* Product Card Design */
+#maindiv > div {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+#maindiv > div:hover {
+    transform: translateY(-5px);
+}
+
+#maindiv img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#maindiv h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Quantity Controls */
+.qtycontrol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.qtycontrol button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background: #3498db;
+    color: white;
     cursor: pointer;
     font-size: 18px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 5px;
-    transition: transform 0.2s;
 }
 
-button:hover {
-    transform: scale(1.1); 
+.qtycontrol span {
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-
-.fa-solid.fa-thumbs-up {
-    color: #ed4956;
-}
-
-
-.delete-btn {
-    color: #8e8e8e;
-    font-size: 12px;
+/* Buttons */
+button.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    cursor: pointer;
     margin-top: 10px;
+}
+
+/* Total Bill Section */
+#bill-container {
+    position: sticky;
+    bottom: 20px;
+    background: #2c3e50;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 40px auto;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
